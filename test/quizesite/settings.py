@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'quiz',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +57,9 @@ ROOT_URLCONF = 'quizesite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'test/quizesite/login_auth/templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

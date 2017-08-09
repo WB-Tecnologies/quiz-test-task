@@ -1,0 +1,5 @@
+{% if username %}
+<li class=»auth_user»><a href=»/auth/logout/»>Log out ({{ username }})</a></li>
+{% else %}
+<li class=»auth_user»><a href=»/auth/login/»>Log in</a></li>
+{% endif %}
