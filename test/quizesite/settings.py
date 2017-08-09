@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'test/quizesite/login_auth/templates'
+            [os.path.join(BASE_DIR,'templates')],
         ],
         'APP_DIRS': True,
         'OPTIONS': {

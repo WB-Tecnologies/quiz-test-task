@@ -23,7 +23,7 @@ from registration import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^registration/', include('registration.urls')),
-    url(r'^registration/login/$',  login),
+    url(r'^registration/login/$',  login, {'template_name': 'admin/login.html'}),
     url(r'^registration/logout/$', logout),
 ]
 
