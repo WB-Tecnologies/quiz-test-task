@@ -4,3 +4,4 @@ myvenv
 db.sqlite
 .DS_STORE
 settings_local.py
+.vagrant
