@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import auth
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -12,14 +13,13 @@ def index(request):
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
+            return HttpResponse("Ok")
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html')
+        return render(request)
+
+
 
