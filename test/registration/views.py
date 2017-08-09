@@ -7,19 +7,23 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 
 
-def index(request):
-	return HttpResponse("Welocme")
+# def index(request):
+    # return HttpResponse("Welocme")
 
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse("Ok")
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = auth.authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        # Правильный пароль и пользователь "активен"
+        auth.login(request, user)
+        # Перенаправление на "правильную" страницу
+        return HttpResponseRedirect("/registration/loggedin/")
     else:
-        form = UserCreationForm()
-        return render(request)
+        # Отображение страницы с ошибкой
+        return HttpResponseRedirect("/registration/invalid/")
 
-
-
+def logout(request):
+    auth.logout(request)
+    # Перенаправление на страницу.
+    return HttpResponseRedirect("/registration/loggedout/")
