@@ -21,11 +21,6 @@ def login(request):
     else:
         return HttpResponseRedirect("/registration/invalid/")
 
-def welcome(request):
-    if request.user.is_authenticated():
-        return render(request,"exam.html")
-    return render(request,"index.html")
-
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect("/registration/loggedout/")
