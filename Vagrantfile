@@ -9,7 +9,7 @@
   config.vm.box = "debian/stretch64"
   config.vm.network "private_network", ip: "55.55.55.5"
   config.vm.network "forwarded_port", guest: 60, host: 8000
-  config.vm.synced_folder "/home/dante/wbtech/test", "/test", type: "nfs"
+  config.vm.synced_folder "/home/dante/wbtech/mysite", "/mysite", type: "nfs"
 
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
