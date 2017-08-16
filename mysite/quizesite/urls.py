@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^login/$',  login, {'template_name': 'admin/login.html'}),
     url(r'^logout/$', logout),
     url(r'^registration/$', views.signup, name='signup'),
+    #url(r'^registration/loggedin/$', loggedin),
     #url(r'^quiz/$'),
     #url(r'^question/$'),
 ]

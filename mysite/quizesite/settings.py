@@ -54,6 +54,8 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'quizesite.urls'
 
+LOGIN_REDIRECT_URL = '/logout'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
