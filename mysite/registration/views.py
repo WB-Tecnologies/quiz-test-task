@@ -9,9 +9,12 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.db import models
 from django.contrib.auth.forms import AuthenticationForm
+from django.http import Http404
+from . import models
 
 
-
+def index(request, Quize):
+    return HttpResponse(Quize)
 
 def login(request):
     username = request.POST['username']
@@ -20,7 +23,6 @@ def login(request):
     if user is not None and user.is_active:
         auth.login(request, user)
         success_url = "/"
- 
 
 def logout(request):
     auth.logout(request)

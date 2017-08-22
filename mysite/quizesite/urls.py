@@ -20,10 +20,12 @@ from django.contrib.auth.views import login, logout
 from registration import views
 
 urlpatterns = [
+    url(r'^quiz/', include('registration.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',  login, {'template_name': 'admin/login.html'}),
     url(r'^logout/$', logout),
     url(r'^registration/$', views.signup, name='signup'),
+    url(r'^registration/quizes$', views.index, name="index"),
     #url(r'^registration/loggedin/$', loggedin),
     #url(r'^quiz/$'),
     #url(r'^question/$'),

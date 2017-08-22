@@ -24,3 +24,9 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question
+
+class Quize(models.Model):
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+

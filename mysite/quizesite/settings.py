@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'quizesite.urls'
 
-LOGIN_REDIRECT_URL = '/logout'
+LOGIN_REDIRECT_URL = '/registration/quizes'
 
 TEMPLATES = [
     {
