@@ -28,5 +28,9 @@ class Question(models.Model):
 class Quize(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = models.ForeignKey(Quiz)
+    
+    def __str__(self):
+        return self.quize
+
 
